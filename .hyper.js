@@ -4,6 +4,12 @@
 
 module.exports = {
   config: {
+    webGLRenderer: false,
+    // rest of the config
+    activeTab: '🚀',
+    webGLRenderer: false,
+
+    // rest of the file
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: 'stable',
@@ -15,13 +21,13 @@ module.exports = {
     fontFamily: 'FiraCode NF',
 
     // default font weight: 'normal' or 'bold'
-    fontWeight: 'bold',
+    fontWeight: 500,
 
     // font weight for bold characters: 'normal' or 'bold'
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1,
+    lineHeight: 1.4,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -43,7 +49,7 @@ module.exports = {
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    backgroundColor: '#000',
 
     // terminal selection color
     selectionColor: 'rgba(248,28,229,0.3)',
@@ -88,7 +94,7 @@ module.exports = {
       lightBlue: '#6A76FB',
       lightMagenta: '#FD7CFC',
       lightCyan: '#68FDFE',
-      lightWhite: '#FFFFFF',
+      lightWhite: '#FFFFFF'
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -137,7 +143,7 @@ module.exports = {
     // rendering (slower, but supports transparent backgrounds)
     webGLRenderer: true,
 
-    // for advanced config flags please refer to https://hyper.is/#cfg
+  // for advanced config flags please refer to https://hyper.is/#cfg
   },
 
   // a list of plugins to fetch and install from npm
@@ -147,12 +153,11 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-            'hyper-mac-controls',
-            'hyper-transparent-bg',
-            'hyper-custom-touchbar',
-            'hyper-gruv',
-            'hyper-spotify'
-            //'hyperborder'
+    'hyper-font-ligatures',
+    'hyperborder',
+    'hyper-spotify',
+    'hyper-aura-theme',
+    'hyper-named-css-colors'
   ],
 
   // in development, you can create a directory under
@@ -163,5 +168,5 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-  },
-};
+  }
+}

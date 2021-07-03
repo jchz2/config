@@ -1,24 +1,37 @@
 set number
 set mouse=a
 set numberwidth=1
-set clipboard=unnamed
-syntax on
+set clipboard=unnamedplus
+syntax enable
 set showcmd
 set ruler
 set cursorline
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
 set encoding=utf-8
 set showmatch
 set sw=2
 set relativenumber
-so ~/.vim/plugins.vim
-so ~/.vim/maps.vim
-so ~/.vim/plugin-config.vim
+set laststatus=2
+set noshowmode
+set rtp+=~/home/jc2/tabnine-vim
+set title
+set colorcolumn=120
+set background=dark
+set shiftround
+set shiftwidth=2
+set tabstop=2
+set expandtab
+set autoindent
+filetype indent on
+set hidden
+set spelllang=en,es
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
+let NERDTreeQuitOnOpen=1
 highlight Normal ctermbg=NONE
-set laststatus=2
-set noshowmode
+
 
 " Javascript
 "autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
@@ -64,3 +77,9 @@ let g:ale_linters = {
 let g:ale_fixers = {'javascript': ['standard']}
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
+let g:syntastic_javascript_checkers = ['standard']
+autocmd bufwritepost *.js silent !standard-format -w %
+set autoread
+so ~/.vim/plugins.vim
+so ~/.vim/maps.vim
+so ~/.vim/plugin-config.vim

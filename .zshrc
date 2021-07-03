@@ -9,6 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="nanotech"
+#ZSH_THEME="gruvbox"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -131,10 +132,35 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 export PATH=/home/$USER/.config/nvcode/utils/bin:$PATH
 export PATH=/home/$USER/.config/nvcode/utils/bin:$PATH
-
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
-
-
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+#export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="~/anaconda/bin:$PATH"
+source /home/jc2/.zsh/completion.zsh
+source /home/jc2/.zsh/completion.zsh
+
+
+# rest of the `~/.zshrc` file
+
+# Load completion config
+source $HOME/.zsh/completion.zsh
+
+# Initialize the completion system
+autoload -Uz compinit
+
+# Cache completion if nothing changed - faster startup time
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
+
+# Enhanced form of menu completion called `menu selection'
+zmodload -i zsh/complist
