@@ -128,3 +128,30 @@ let $FZF_DEFAULT_OPTS='--layout=reverse'
     "return search_result
 "endfunction
 
+"airline.vim
+let g:airline#extensions#tabline#enabled = 1  " show open buffers (like tabs)
+let g:airline#extensions#tabline#fnamemod = ':t'  " Show only filename
+let g:airline_powerline_fonts = 1 " Change separetors to be triangles
+let g:airline_theme='tomorrow'
+
+"prettier.vim
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_requrie_pargma = 0
+
+"emmet.vim
+let g:user_emmet_leader_key='<C-Z>'
+
+"vim-clang-format.vim
+let g:clang_format#code_style="llvm"
+let g:clang_format#code_style="webkit"
+let g:clang_format#detect_style_file=1
+let g:clang_format#auto_format=1
+
+" Vim devicons
+if exists("g:loaded_webdevicons")
+  call webdevicons#refresh()
+endif
+"configuring the highlight devicons
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1

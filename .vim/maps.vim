@@ -106,3 +106,12 @@ endfunction
 "you split a terminal with a size of 15
 vnoremap <c-t> :split<CR>:ter<CR>:resize 15<CR>
 nnoremap <c-t> :split<CR>:ter<CR>:resize 15<CR>
+
+"vertical split
+"horizontal split
+nnoremap <leader>vs :vsp<CR>
+nnoremap <leader>th :sp<CR>
+
+"Prettier formatter for coc.nvim
+nnoremap <Leader>f :CocCommand prettier.formatFile<CR>
+

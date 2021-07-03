@@ -43,10 +43,26 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-signify'
 Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdcommenter'
+Plug 'KabbAmine/vCoolor.vim'
+Plug 'prettier/prettier'
+Plug 'mattn/emmet-vim'
+Plug 'rhysd/vim-clang-format'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'honza/vim-snippets'
+Plug 'preservim/tagbar'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
+Plug 'vim-python/python-syntax'
+Plug 'mbbill/undotree'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'puremourning/vimspector'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+
 
 " git
 Plug 'tpope/vim-fugitive'
-
 Plug 'tpope/vim-repeat'
 
 """"""""""""""""""""""""""""""""
@@ -62,5 +78,14 @@ Plug 'vim-airline/vim-airline-themes'
 
 " NERDCommenter
 Plug 'preservim/nerdcommenter'
+
+" JAVASCRIPT STANDARD STYLE
+Plug 'feross/standard'
+
+"Visual
+Plug 'lilydjwg/colorizer'
+Plug 'leafgarland/typescript-vim'
+Plug 'uiiaoo/java-syntax.vim'
+Plug 'tonsky/firacode'
 
 call plug#end()
